@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    padding: 10px;
+    border: 1px solid #00ffcc; /* Borde neón */
+    border-radius: 5px;
+    pointer-events: none;
+    color: #00ffcc; /* Texto neón */
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+}
+
+.tile {
+    stroke: #1a1a1a; /* Borde oscuro para los rectángulos */
+    transition: fill 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.tile:hover {
+    stroke: #00ffcc; /* Borde neón al pasar el mouse */
+    filter: brightness(1.2); /* Aumentar brillo */
+}
+
+.legend-item {
+    stroke: #1a1a1a; /* Borde oscuro para los ítems de la leyenda */
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    color: #00ffcc; /* Título neón */
+    margin-top: 20px;
+}
+
+#description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: #cccccc; /* Texto gris claro */
+}
+.tile {
+    fill: url(#gradient); /* Usar degradado para los rectángulos */
+}
+
+#legend rect {
+    fill: url(#gradient); /* Usar degradado para la leyenda */
+}
+
+/* Definir el degradado */
+svg defs linearGradient {
+    id: "gradient";
+    x1: "0%";
+    y1: "0%";
+    x2: "100%";
+    y2: "100%";
+}
+
+svg defs linearGradient stop {
+    offset: "0%";
+    style: "stop-color:#00ffcc;stop-opacity:1"; /* Color neón */
+}
+
+svg defs linearGradient stop {
+    offset: "100%";
+    style: "stop-color:#009999;stop-opacity:1"; /* Color más oscuro */
+}
+.tile {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tile:hover {
+    transform: scale(1.02); /* Ligero zoom al pasar el mouse */
+    filter: drop-shadow(0 0 5px #00ffcc); /* Sombra neón */
+}
+#legend {
+    margin-top: 20px;
+}
+
+#legend text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    fill: #ffffff; /* Texto blanco */
+}
+
+#legend rect {
+    stroke: #00ffcc; /* Borde neón */
+    stroke-width: 1px;
+}
